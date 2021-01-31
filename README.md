@@ -1,7 +1,7 @@
 # Learning Intuitive Physics with Multimodal Generative Models
 This package provides the PyTorch implementation and the vision-based tactile sensor 
 simulator for our [AAAI 2021 paper](https://arxiv.org/pdf/2101.04454.pdf).
-The tactile simulator is based on PyBullet and provide the simulation of the
+The tactile simulator is based on PyBullet and provides the simulation of the
 [Semi-transparent Tactile Sensor (STS)](https://openaccess.thecvf.com/content/WACV2021/papers/Hogan_Seeing_Through_Your_Skin_Recognizing_Objects_With_a_Novel_Visuotactile_WACV_2021_paper.pdf). 
 
 ## Installation
@@ -14,7 +14,8 @@ pip install -e .
 ```
 
 ## Visuotactile Simulation
-The sub-package [tact_sim](TODO) provides the components required for visoutactile simulation
+The sub-package [tact_sim](https://github.com/SAIC-MONTREAL/multimodal-dynamics/tree/master/mmdyn/tact_sim)
+provides the components required for visoutactile simulation
 of the STS sensor and is implemented in [PyBullet](https://github.com/bulletphysics/bullet3). 
 The simulation is vision based and is not meant to be physically
 accurate of the contacts and soft body dynamics. 
@@ -24,8 +25,8 @@ To run an example script of an object falling on the sensor use:
 FROM ~/multimodal-dynamics/mmdyn/tact_sim
 python examples/demo.py --show_image --object winebottle
 ```
-This loads the object from the [graphics/objects](TODO) and renders 
-the resulting visual and tactile images.
+This loads the object from the [graphics/objects](https://github.com/SAIC-MONTREAL/multimodal-dynamics/tree/master/graphics/objects)
+and renders the resulting visual and tactile images.
 
 The example scripts following the name format `experiments/exp_{ID}_{task}.py` have been 
 used to generate the dataset of our [AAAI 2021 paper](https://arxiv.org/pdf/2101.04454.pdf).
@@ -53,7 +54,7 @@ To run the data collection scripts use:
 python experiments/exp_{ID}_{task}.py --logdir {path_to_logdir} --dataset_dir {path_to_ShapeNetSem} --category "WineBottle, Camera" --show_image
 ```
 To see all available object classes that are suitable for these experiments see 
-[tact_sim/config.py](TODO).  
+[tact_sim/config.py](https://github.com/SAIC-MONTREAL/multimodal-dynamics/blob/master/mmdyn/tact_sim/config.py).  
 
 ## License 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">SECA</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
