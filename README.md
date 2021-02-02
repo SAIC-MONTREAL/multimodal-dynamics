@@ -55,7 +55,7 @@ python experiments/exp_{ID}_{task}.py --logdir {path_to_logdir} --dataset_dir {p
 To see all available object classes that are suitable for these experiments see 
 [tact_sim/config.py](https://github.com/SAIC-MONTREAL/multimodal-dynamics/blob/master/mmdyn/tact_sim/config.py).
 
-## Learning Multimddal Dynamics Models
+## Learning Multimodal Dynamics Models
 Once you have collected the dataset, you can start training the multimodal
 ''resting state predictor'' dynamics model, as described in the paper, using:
 ```
