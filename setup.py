@@ -6,9 +6,9 @@ setup(
     version='0.1.0',
     install_requires=[
         'pybullet',
-        # 'torch',
-        # 'torchvision',
-        # 'tensorboard',
+        'torch',
+        'torchvision',
+        'tensorboard',
         'numpy',
         'pandas',
         'opencv-python',
@@ -18,7 +18,8 @@ setup(
         'pillow',
         'networkx',
         'seaborn',
-        'pyquaternion'
+        'pyquaternion',
+        'pyyaml'
     ],
     description="Tactile Simulator based on PyBullet",
     author="Sahand Rezaei-Shoshtari"
