@@ -58,7 +58,8 @@ def dataset_setup(dataset_path, problem_type, **kwargs):
         'train_dataset': train_dataset,
         'test_dataset': test_dataset,
         'train_loader': train_loader,
-        'test_loader': test_loader
+        'test_loader': test_loader,
+        'seq_length': train_dataset.seq_length
     }
     if hasattr(train_dataset, 'classes'):
         out_dict['classes'] = train_dataset.classes
@@ -76,6 +77,7 @@ class VisuoTactileDataset(VisionDataset):
         self.transform = transform
         self.train = train
         self.targets = None
+        self.seq_length = None
         self._compiled_name = compiled_name
         self._background_subtraction = background_subtraction
         self.__get_dataset__(dataset_path=dataset_path, real_dataset=real_dataset)
@@ -175,6 +177,7 @@ class VisuoTactileDataset(VisionDataset):
             final_visual_images = sorted(root.glob('**/visual_' + str(seq_length - 1).zfill(4) + '.png'))
             final_tactile_images = sorted(root.glob('**/tactile_' + str(seq_length - 1).zfill(4) + '.png'))
             final_seg_images = sorted(root.glob('**/seg_' + str(seq_length - 1).zfill(4) + '.png'))
+            self.seq_length = seq_length
 
             print("Visual images: {}, Tactile images: {}, Sequences: {}, Sequence length: {}".format(
                 len(visual_images), len(tactile_images), len(data), seq_length

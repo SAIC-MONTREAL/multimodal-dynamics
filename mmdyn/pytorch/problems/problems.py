@@ -47,10 +47,7 @@ class Problem:
         self._pose_multiplier = self.parameters['pose_multiplier']
         self._conditional = self.parameters['conditional']
         self._categorical_conditions = None
-
-        # hard coded sequence length (should be ideally changed to be read from the dataset)
-        # TODO: Read seq length
-        self._seq_length = 30 if 'sim' in self.parameters['dataset_path'] else 1
+        self._seq_length = None
 
         self._device = torch.device('cuda' if torch.cuda.is_available() and not self.parameters['no_cuda'] else 'cpu')
         assert (self.parameters['input_type'] in config.INPUT_TYPES), "Input type is not implemented"
@@ -120,6 +117,8 @@ class Problem:
                                           shuffle=True)
         self.train_dataset, self.test_dataset = self.dataset_dict['train_dataset'], self.dataset_dict['test_dataset']
         self.train_loader, self.test_loader = self.dataset_dict['train_loader'], self.dataset_dict['test_loader']
+        self._seq_length = self.dataset_dict['seq_length']
+        print(self._seq_length)
         if 'classes' in self.dataset_dict.keys():
             self._classes = self.dataset_dict['classes']
 
