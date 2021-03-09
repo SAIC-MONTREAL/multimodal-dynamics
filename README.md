@@ -1,6 +1,6 @@
 # Learning Intuitive Physics with Multimodal Generative Models
 This package provides the PyTorch implementation and the vision-based tactile sensor 
-simulator for our [AAAI 2021 paper](https://arxiv.org/pdf/2101.04454.pdf).
+simulator for our [AAAI 2021 paper](https://arxiv.org/abs/2101.04454).
 The tactile simulator is based on PyBullet and provides the simulation of the
 [Semi-transparent Tactile Sensor (STS)](https://openaccess.thecvf.com/content/WACV2021/papers/Hogan_Seeing_Through_Your_Skin_Recognizing_Objects_With_a_Novel_Visuotactile_WACV_2021_paper.pdf). 
 
